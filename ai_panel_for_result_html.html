@@ -72,7 +72,7 @@
     <div class="flask-url-row" id="url-pills">
       <div class="flask-pill active" onclick="selectUrl(this, 'http://127.0.0.1:5000')">127.0.0.1:5000</div>
       <div class="flask-pill" onclick="selectUrl(this, 'http://localhost:5000')">localhost:5000</div>
-      <div class="flask-pill" onclick="selectUrl(this, 'https://bkr3800.pythonanywhere.com')">pythonanywhere</div>
+      <div class="flask-pill" onclick="selectUrl(this, 'https://web-production-8d09d.up.railway.app')">railway</div>
     </div>
     <input type="text" id="custom-url" style="margin-top:8px;"
       placeholder="or type custom URL e.g. http://192.168.1.8:5000" />
@@ -96,7 +96,8 @@ function getLocalFlaskOrigin() {
     }
     return null;
 }
-let selectedBaseUrl = getLocalFlaskOrigin() || "https://bkr3800.pythonanywhere.com";
+// let selectedBaseUrl = getLocalFlaskOrigin() || "https://bkr3800.pythonanywhere.com";
+let selectedBaseUrl = getLocalFlaskOrigin() || "https://web-production-8d09d.up.railway.app";
 let lastAnalysis = null;
 
 function selectUrl(el, url) {

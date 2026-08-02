@@ -78,7 +78,8 @@ document.getElementById("calcForm").addEventListener("submit", async function(e)
   const payload = { place, sides, height, project_info };
 
   try {
-    const response = await fetch("https://mahamonir.pythonanywhere.com/calculate", {
+    // const response = await fetch("https://mahamonir.pythonanywhere.com/calculate", {
+    const response = await fetch("https://web-production-8d09d.up.railway.app/calculate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)

@@ -8,6 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph / WhatsApp / Telegram link preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shortcircuit.company/LuxSCale/index3.html" />
+    <meta property="og:title" content="LuxScale | Lighting Design Tool" />
+    <meta property="og:description" content="Professional lighting calculation tool by Short Circuit Company. Get fixture recommendations, lux levels, and uniformity analysis instantly." />
+    <meta property="og:image" content="https://shortcircuit.company/LuxSCale/assets/LuxSCaleAI.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Short Circuit Company" />
+    
+    <!-- Twitter / fallback -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://shortcircuit.company/LuxSCale/assets/LuxSCaleAI.png" />
     <style>
         :root {
             --fm-heading: "Anton", sans-serif;
@@ -544,13 +557,14 @@
         const RESULT_LINK_TTL_MS = 60 * 60 * 1000; // 1 hour
         const RESULT_PAGE_PATH = "result.html";
 
-        /** Local Flask vs PythonAnywhere â€” match index.html */
+        /** Local Flask vs Railway hosted API â€” match index.html */
         function getCalculateApiUrl() {
             const h = window.location.hostname;
             if (h === "localhost" || h === "127.0.0.1") {
                 return "http://127.0.0.1:5000/calculate";
             }
-            return "https://mahamonir.pythonanywhere.com/calculate";
+            // return "https://mahamonir.pythonanywhere.com/calculate";
+            return "https://web-production-8d09d.up.railway.app/calculate";
         }
 
         function getUiSettingsApiUrl() {
@@ -558,7 +572,8 @@
             if (h === "localhost" || h === "127.0.0.1") {
                 return "http://127.0.0.1:5000/api/ui-settings";
             }
-            return "https://mahamonir.pythonanywhere.com/api/ui-settings";
+            // return "https://mahamonir.pythonanywhere.com/api/ui-settings";
+            return "https://web-production-8d09d.up.railway.app/api/ui-settings";
         }
 
         let ceilingHeightBounds = { interior_min_m: 3, interior_max_m: 5, exterior_max_m: 20 };
